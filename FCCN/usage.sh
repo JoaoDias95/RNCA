@@ -7,12 +7,12 @@ function parse {
 function main {
     echo "
 {
-    "report_type": "Resource_Usage_HPC",
-    "report_version": "1.0",
-    "report_date": "$2",
-    "RNCA_resource_id": "_sample_",
-    "items": ["
-        parse $@ | awk -f usage.awk
+    \"report_type\": \"Resource_Usage_HPC\",
+    \"report_version\": \"1.0\",
+    \"report_date\": \"$2\",
+    \"RNCA_resource_id\": \"_sample_\",
+    \"items\": ["
+        parse $@ | awk -f /home/macc/usage/JSON/usage.awk | sed '$s/,$//'
     echo "
     ]
 }"
@@ -23,7 +23,7 @@ if [[ $# == 0 ]]; then
   start=$(date  '+%Y-%m-%dT00:00:00' -d "-2 week")
   end=$(date  '+%Y-%m-%dT23:59:59')
   main $start $end
-elif [[ $# == 1 ]]; then
+elif [[ $# == 2 ]]; then
   start_aux=$(date '+%Y-%m-%d' -d "$1-2 week")
   start=$start_aux"T00:00:00"
   end="$1T23:59:59"
