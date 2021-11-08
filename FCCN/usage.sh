@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function parse {
-  TZ=UTC sacct --clusters macc --parsable2 --allusers --noconvert --format Jobid,CPUTimeRaw,State,ReqGres,Account,TRESUsageInTot --starttime $1 --endtime $2
+  TZ=UTC sacct --clusters macc --parsable2 --allusers --noheader --noconvert --format Jobid,CPUTimeRaw,State,ReqGres,Account,TRESUsageInTot --starttime $1 --endtime $2
 }
 
 function main {

@@ -6,7 +6,7 @@ Two parsing options:
 
 Changes in SLURM query:
 
-#TZ=UTC sacct --clusters macc --noconvert --parsable2 --allusers --format Jobid,CPUTimeRaw,State,ReqGres,Account,TRESUsageInTot --starttime yyyy-mm-dd --endtime yyyy-mm-dd
+#TZ=UTC sacct --clusters macc --noconvert --noheader --parsable2 --allusers --format Jobid,CPUTimeRaw,State,ReqGres,Account,TRESUsageInTot --starttime yyyy-mm-dd --endtime yyyy-mm-dd
 
 
 ------------------------------------------- files
